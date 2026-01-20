@@ -15,6 +15,7 @@ from database import save_to_db, get_reservations, del_from_db, check_table_avai
 from utils.keyboards import get_table_kb, get_time_kb, get_guests_kb
 from utils.fsm import ReservState
 
+# Я НЕ ЗАКИНУЛ ЭТО ЗАДАНИЕ РАНЬШЕ ТАК КАК НЕ БЫЛО ИНТЕРНЕТА.
 
 load_dotenv()
 PAYMENT_TOKEN = os.getenv('PAYMENT_API')

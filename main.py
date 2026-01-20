@@ -1,12 +1,15 @@
 import asyncio
 import logging
 from bot import bot, dp, router, rest_fsm
-from middleware import PaymentCheckMiddleware
+from utils.middleware import PaymentCheckMiddleware
 
 logging.basicConfig(level=logging.INFO)
 
 async def main():
     import handlers
+    from database import init_db
+
+    init_db()
 
     dp.update.outer_middleware(PaymentCheckMiddleware())
 

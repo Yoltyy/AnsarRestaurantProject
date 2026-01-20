@@ -16,6 +16,7 @@ class PaymentCheckMiddleware(BaseMiddleware):
         if isinstance(event, Message) and event.successful_payment:
             if state:
                 data = await state.get_data()
+                # Теперь save_to_db будет доступна
                 save_to_db(
                     user_id=event.from_user.id,
                     date=data.get('date'),

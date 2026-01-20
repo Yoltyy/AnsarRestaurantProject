@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 from aiogram.fsm.context import FSMContext
 from aiogram.filters import Command, CommandStart
 
-from database import save_to_db, get_reservations, del_from_db, check_availability, is_time_available, check_table_availability
+from database import save_to_db, get_reservations, del_from_db, check_table_availability, is_time_available, check_table_availability
 from utils.keyboards import get_table_kb, get_time_kb, get_guests_kb
 from utils.fsm import ReservState
 

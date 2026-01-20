@@ -1,6 +1,25 @@
 import sqlite3
 
 
+def init_db():
+    conn = sqlite3.connect('rest_booking.db')
+    cursor = conn.cursor()
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS reservations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER,
+            date TEXT,
+            time TEXT,
+            guests INTEGER,
+            preference TEXT
+        )
+    ''')
+
+    conn.commit()
+    conn.close()
+
+
 def save_to_db(user_id, date, time, guests, preference):
     conn = sqlite3.connect('rest_booking.db')
     cursor = conn.cursor()

@@ -1,7 +1,7 @@
 import asyncio
 import logging
 from bot import bot, dp, router, rest_fsm
-from midleware import PaymentCheckMiddleware
+from middleware import PaymentCheckMiddleware
 
 logging.basicConfig(level=logging.INFO)
 
